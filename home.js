@@ -40,6 +40,26 @@ for(const form of forms){
 document.getElementById(id).style.display="block"
 }
 
+//funciton to toggle button
+
+function handleButtonToggle(id){
+const formBtns =document.getElementsByClassName("form-btn")
+
+for(const btn of formBtns){
+ btn.classList.remove("border-[#0874f2]","bg-[#0874f20d]")
+ btn.classList.add("border-gray-300")
+
+}
+document.getElementById(id).classList.remove("border-gray-300")
+document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]")
+ 
+}
+
+
+
+
+
+
 
 
 
@@ -71,6 +91,7 @@ const totalNewAvailableBalance=amount+avaiableBalance;
 
 // document.getElementById("available-balance").innerText=totalNewAvailableBalance;
 setInnerText(totalNewAvailableBalance)
+handleButtonToggle()
 })
 
 //cash out money feature"
@@ -93,37 +114,39 @@ document.getElementById("withdraw-btn").addEventListener("click",function(e){
 //1
 //AddMoney
 document.getElementById("add-button").addEventListener("click",function(){
-
+handleToggle("add-money-parent")
+handleButtonToggle("add-button")
   // document.getElementById("cash-out-parent").style.display="none";
 
   // document.getElementById("add-money-parent").style.display="block" 
   
-const forms=document.getElementsByClassName("form")
+// const forms=document.getElementsByClassName("form")
 
-for(const form of forms){
-  form.style.display="none"
-}
+// for(const form of forms){
+//   form.style.display="none"
+// }
 
-document.getElementById("add-money-parent").style.display="block"
+// document.getElementById("add-money-parent").style.display="block"
 
 });
 //2
 
 document.getElementById("cash-out-button").addEventListener("click",function(){
-
+handleToggle("cash-out-parent")
+handleButtonToggle("cash-out-button")
   //CashOut
 //   document.getElementById
 // ("add-money-parent").style.display="none"
 // document.getElementById("cash-out-parent").style.display="block"
 // 
 
-const forms=document.getElementsByClassName("form")
+// const forms=document.getElementsByClassName("form")
 
-for(const form of forms){
-  form.style.display="none"
-}
+// for(const form of forms){
+//   form.style.display="none"
+// }
 
-document.getElementById("cash-out-parent").style.display="block"
+// document.getElementById("cash-out-parent").style.display="block"
 
 
 });
@@ -133,21 +156,25 @@ document.getElementById("cash-out-parent").style.display="block"
 //transfer money
 document.getElementById("transfer-button").addEventListener("click",function(){
 handleToggle("transfer-money-parent")
+handleButtonToggle("transfer-button")
 })
 
 //Get Bonus
 document.getElementById("get-bonus-button").addEventListener("click",function(){
 handleToggle("get-bonus-parent")
+handleButtonToggle("get-bonus-button")
 })
 
 //PayBill
 document.getElementById("pay-bill-button").addEventListener("click",function(){
 handleToggle("Pay-bill-parent")
+handleButtonToggle("pay-bill-button")
 })
 
 //Transactions
 document.getElementById("transactions-button").addEventListener("click",function(){
 handleToggle("transactions-parent")
+handleButtonToggle("transactions-button")
 })
 
 
